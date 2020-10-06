@@ -1,0 +1,85 @@
+.nav{
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    z-index: 100;
+    transition: 350ms all ease-in-out;
+}
+.navShadow{
+    box-shadow: 0 0 15px -1px rgba(0, 0, 0, 0.15);
+}
+.navLinks {
+    display: flex;
+    align-items: center;
+}
+.navLinks a{
+    font-size: .9rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin-right: 2.8rem;
+    letter-spacing: .5px;
+    position: relative;
+}
+.navLinks a:before{
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left:-15px;
+    width: 33px;
+    border-radius: 50px;
+    z-index:-1;
+    height: 33px;
+    background-color: var(--main-color);
+    opacity: 0;
+    transition: 350ms;
+}
+.navLinks .activeLink:before{
+    opacity:.9;
+}
+.navLinks a:not(.activeLink):hover:before{
+    opacity:.2;
+}
+.navIndicator{
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    transition: 300ms;
+}
+.navLogo{
+    height:2.5rem;
+    margin-right: 4rem;
+    margin-left:-1rem;
+    opacity: .9;
+}
+
+
+@media(max-width:800px){
+
+.nav > button{
+    display: none;
+}
+
+.nav{
+    background-color: transparent;
+}
+.navLinks{
+    display:none;
+}
+.langSelector{
+    display:none;
+}
+.navShadow{
+    box-shadow: unset;
+}
+}

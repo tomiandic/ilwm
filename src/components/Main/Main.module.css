@@ -1,0 +1,506 @@
+/* -----------LANDING----------- */
+
+.landing{
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+.landingImage{
+    border-top-right-radius: 10px;
+    min-width: 47vw;
+    object-fit: cover;
+    object-position: top right;
+    height: calc(100% - 5rem);
+}
+
+.landingContent{
+    align-self: center;
+    max-width: 1050px;
+    padding: 0 5vw;
+    margin-top:5rem;
+}
+
+.landingContent h3{
+    font-size: .95rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.landingContent h1{
+    font-family: 'Comfortaa', cursive;
+    font-size: 4rem;
+    margin: 1rem 0;
+    margin-left: -3px;
+}
+
+.landingContent p{
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: var(--gray);
+    width: 80%;
+    margin: 2.5rem 0;
+}
+
+.arrowIcon{
+    width: 1.4rem;
+    margin-left: 15px;
+    transition: all 250ms ease-in;
+}
+
+/* -----------DESCRIPTION SECTION----------- */
+
+.description{
+    background: var(--dark-bg);
+    padding: 13rem 0;
+    position:relative;
+}
+
+.descParagraph{
+    color: #fff;
+    line-height: 2rem;
+    width: 60%;
+    text-align:center;
+    margin: auto;
+    max-width: 800px;
+    min-width: 600px;
+    opacity:.9;
+}
+.elipseImage{
+    display:block;
+    margin: auto;
+    margin-bottom: 3rem;
+    height: 2rem;
+}
+.decorationRight{
+    position: absolute;
+    height: 50vh;
+    top: -25vh;
+    right:-11rem;
+}
+.decorationLeft{
+    position: absolute;
+    left:-15rem;
+    height:55vh;
+}
+
+/* -----------ARTICLES SECTION----------- */
+
+.sectionGlobal{
+    padding: 8rem 0;
+}
+.articleSection{
+    background:#F3F0EF;
+}
+.sectionContent{
+    width: 85%;
+    min-width: 800px;
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+} 
+.sliderNav > img{
+    height: 5rem;
+    width: 5rem;
+    cursor: pointer;
+    transition: 250ms;
+}
+.sliderNav > img:hover{
+    filter:drop-shadow(0 0 5px var(--secondary-color));
+}
+.leftArrow{
+    margin-right: 2rem;
+}
+.rightArrow{
+    position: relative;
+}
+.sectionTitleContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.sectionTitleContainer h2{
+    font-size: 2.5rem;
+    font-family: 'Comfortaa', cursive;
+}
+.swiperImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    min-height: 500px;
+    border-radius: 30px;
+}
+.postLink{
+    position: relative;
+    display: inline-block;
+}
+.postContent{
+    position: absolute;
+    z-index: 10;
+    left: 1rem;
+    right: 1rem;
+    bottom: 3rem;
+    color: white;
+}
+.postContent h2{
+    font-size: 1.25rem;
+}
+.postContent h2:before{
+    content: "";
+    position:absolute;
+    bottom:0;
+    left:-10px;
+    height:0;
+    width: 4px;
+    border-radius: 1rem;
+    background: var(--main-color);
+    transition: 250ms all ease-in-out;
+}
+.postContent p{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .55rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    color: var(--main-color);
+}
+.postOverlay{
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 30px;
+    transition: background 450ms;
+}
+.postLink:hover .postContent h2:before{
+    height: 100%;
+}
+.buttonContainer{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+
+/* -----------APPLICATION SECTION----------- */
+
+
+.appDesc1{
+    width: 50%;
+    max-width: 750px;   
+    line-height: 1.8rem;
+    font-size: .9rem;
+}
+.appDesc2{
+    width: 80%;
+    max-width: 920px;
+    line-height: 1.8rem;
+    font-size: .9rem;
+}
+.elipseDec1{
+    position: absolute;
+    top:-5rem;
+    right:-30%;
+    width: 50%;
+    min-width: 550px;
+}
+.laptopImgHolder{
+    position: absolute;
+    top: 5rem;
+    right: 0;
+}
+.laptopImg{
+    width:100%;
+    filter: drop-shadow(0 35px 25px rgba(0, 0, 0, 0.25));
+}
+.buttonHolder{
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    width: 40%;
+    min-width: 400px;
+}
+.buttonHolder button{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    min-width: 255px;
+}
+
+/* -----------AUTORS SECTION----------- */
+
+.autor{
+    display: flex;
+    margin-bottom: 12rem;
+}
+.autor:last-of-type{
+    margin-bottom:0;
+}
+
+.autor  img{
+    border-top-left-radius:80px;
+    border-bottom-right-radius: 80px;
+    width: 25vw;
+    max-width: 400px;
+    height: 70vh;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: top;
+}
+.autor > p{
+    font-size: .85rem;
+    line-height: 1.8rem;
+    color: #fff;
+    text-align: left;
+    margin-top: -10px;
+    padding-left: 4vw;
+    opacity: .9;
+    max-width: 950px;
+}
+.autorDetails h3{
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+.autorDetails p{
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size:.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+.decorationLeftAutors{
+    position: absolute;
+    height: 500px;
+    left:-200px;
+}
+.decorationRightAutors{
+    position: absolute;
+    right: -20rem;
+    height: 500px;
+    top: 50%;
+}
+/* -----------CONTACT SECTION----------- */
+
+.sectionContact{
+    background: var(--main-color);
+    padding: 5rem 0;
+}
+.contactTitle{
+    font-size: 3.5rem;
+    text-align: right;
+    font-family: comfortaa;
+    text-transform: uppercase;
+    line-height: 4.5rem;
+    margin-right: 3rem;
+    max-width:450px;
+}
+.contactContent a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+.contactContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactLink{
+    display: flex;
+    align-items: center;
+}
+.contactLink img{
+    height: 4rem;
+    filter: drop-shadow(0 0 -10px black);
+    width: 4rem;
+    margin-right: 1rem;
+}
+
+@media(max-width:1500px){
+    .landingContent h1{
+        font-size: 3rem;
+    }
+    .landingContent{
+        max-width: 650px;
+    }
+    .landingContent p{
+        font-size: .9rem;
+        line-height: 1.5rem;
+        width: 100%;
+        margin: 0 0;
+    }
+    .landingContent h3{
+        font-size: .85rem;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+    }
+}
+
+
+@media(max-width:800px){
+.landing{
+    height: unset;
+    min-height: 100vh;
+}
+.landingContent{
+    margin: 2rem 0;
+}
+.landingContent h3{
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+.landingContent h1{
+    font-size: 2rem;
+}
+.landingContent p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+.landingImage{
+    min-width: 100%;
+    height: unset;
+    max-height: 45vh;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 0px;
+    object-position: center;
+}
+.landing{
+    flex-direction: column;
+    align-items: flex-start;
+}
+.description{
+    padding: 7rem 0;
+}
+.description p{
+    min-width: 93%;
+    font-size:.85rem;
+    line-height: 1.8rem;
+}
+.appDesc1,
+.appDesc2{
+    width: 100%;
+}
+.appDesc2{
+    padding-bottom: 18rem;
+}
+.elipseDec1{
+    bottom: -50%;
+    top:unset;
+    right:unset;
+    left:0;
+    min-width: 100%;
+    z-index:-1;
+}
+.buttonHolder{
+    bottom: -3rem;
+    top:unset;
+    right: 50%;
+    transform: translateX(50%);
+    width: 70%;
+}
+.sectionContent{
+    min-width: 93%;
+}
+
+.autor p{
+    min-width:unset;
+    padding-left: unset;
+}
+.autorDetails img{
+    height: 200px;
+    width: 200px;
+}
+.autorDetails p{
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-size: .75rem;
+}
+.autor{
+    flex-direction:column;
+}
+.contactTitle{
+    font-size: 2.5rem;
+}
+
+}
+
+@media(max-width:600px){
+    .elipseDec1{
+        bottom: -25%;
+    }
+    .appDesc2{
+        padding-bottom: 15rem;
+    }
+    .sectionTitleContainer h2{
+        font-size: 2rem;
+    }
+    .sectionTitleContainer{
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 3rem;
+    }
+    .sliderNav > img{
+        height: 4rem;
+        margin-top: 2rem;
+    }
+    .leftArrow{
+        margin-right: 1rem;
+        margin-left: -7px;
+    }
+    .swiperImg{
+        min-height: 300px;
+        border-radius: 20px;
+    }
+    .postContent p{
+        font-weight: 500;
+        font-size:.6rem;
+    }
+    .postContent h2{
+        font-size:.9rem;
+    }
+    .postContent{
+        bottom: 2rem;
+        left:10px;
+        right:10px;
+    }
+    .buttonHolder{
+        min-width: 95%;
+    }
+    .buttonHolder button{
+        min-width: 200px;
+        padding: 1rem 1.5rem;
+    }
+    .autorDetails img{
+        height: 130px;
+        width: 110px;
+        border-top-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+    .autor{
+        margin-bottom: 5rem;
+    }
+    .contactTitle{
+        font-size: 1.7rem;
+        line-height: 2.5rem;
+        text-align:center;
+        margin-right: unset;
+        margin-bottom: 3rem;
+    }
+    	.contactContent{
+            flex-direction: column;
+        }
+}
+
+@media(max-width:330px){
+    .landing h3{
+        display: none;
+    }
+    
+}

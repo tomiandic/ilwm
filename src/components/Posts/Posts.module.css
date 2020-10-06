@@ -1,0 +1,119 @@
+.postsSection{
+    background: rgb(247, 246, 243);
+    padding-bottom:15rem;
+}
+
+.post img{
+    height: 240px;
+    min-width: 300px;
+    border-radius: 30px;
+    object-fit: cover;
+    transition: all 300ms;
+}
+.post{
+    display: flex;
+}
+.post h2{
+    position: relative;
+    box-shadow:inset 0 -10px 0 var(--main-color);
+    display:inline-block;
+    font-size: 1.7rem;
+}
+.postsTitle{
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    margin-bottom: 12rem;
+}
+.postsTitle > img{
+    height: 500px;
+    width: 100%;
+    object-fit:cover;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+.postsTitle > h1{
+    font-size: 50px;
+    font-family: 'comfortaa';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -10%);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+
+
+.postsContainer{
+    width: 80%;
+    margin: auto;
+    min-width: 800px;
+    max-width: 1200px;
+
+}
+.postDetails{
+    margin-left: 2rem;
+}
+
+.postText{
+    font-size: .9rem;
+    line-height: 1.4rem;
+    color:rgb(51, 51, 51);
+}
+.postDate{
+    font-size:.75rem;
+    margin-bottom: 5px;
+    color: gray;
+}
+.post{
+    margin-top: 4rem;
+    cursor: pointer;
+}
+.post:hover img{
+    box-shadow: 0 0 26px -5px var(--main-color);
+}
+.postCat{
+    font-size:.65rem;
+    font-weight: 500;
+    margin-left: 1px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:var(--secondary-color);
+}
+.post h2{
+        margin: 3px 1rem 10px 0;
+}
+
+@media(max-width:800px){
+    .postsSection{
+        padding: 6rem 0;
+    }
+    .postsContainer{
+        min-width: 100%;
+    }
+    .post img{
+        height: 200px;
+    }
+    .postDetails{
+        margin-left:1rem;
+    }
+    .post p{
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+}
+
+@media(max-width:500px){
+    .post{
+        flex-direction: column;
+    }
+    .postDetails{
+        margin-left:0;
+    }
+    .post img{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

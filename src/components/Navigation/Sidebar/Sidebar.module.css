@@ -1,0 +1,139 @@
+.hamburger{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    transition: all 500ms ease-in-out;
+    cursor:pointer;
+    display:none;
+    margin-left:auto;
+}
+.hamburger span{
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: rgb(255, 255, 255);
+    transition: all 250ms ease-in-out;
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+
+.hamburger span:nth-child(1), .hamburger span:nth-child(2){
+    top:0;
+}
+.hamburger span:nth-child(2n+1){
+    left:0;
+}
+.hamburger span:nth-child(2n){
+    left:50%;
+}
+.hamburger span:nth-child(3), .hamburger span:nth-child(4){
+    top:8px;
+}
+.hamburger span:nth-child(5), .hamburger span:nth-child(6){
+    top:16px;
+}
+
+/* --------- HAMB ON OPENED ---------- */
+
+.sidebarOpened .hamburger span:nth-child(1),  .sidebarOpened .hamburger span:nth-child(6){
+ transform: rotate(45deg);
+}
+.sidebarOpened .hamburger span:nth-child(2),  .sidebarOpened .hamburger span:nth-child(5){
+    transform: rotate(-45deg);
+}
+.sidebarOpened .hamburger span:nth-child(3){
+    left: -50%;
+    opacity: 0;
+}
+.sidebarOpened .hamburger span:nth-child(4){
+    left: 100%;
+    opacity: 0;
+}
+.sidebarOpened ~ .sidebarLinks {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: visible;
+}
+.hambContainer{
+    align-items: center;
+    justify-content: center;
+    margin-left:auto;
+    display:none;
+}
+.toggleCircle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 5rem;
+    padding: 8px 2.05rem;
+    display:none;
+}
+.circle {
+    width: 60px;
+    height: 60px;
+    fill: var(--secondary-color);
+    pointer-events: none;
+    transform: scale(1) translateZ(1%, 1%, 0);
+    transform-origin: center;
+    transition: transform .5s;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+  }
+
+/*   onclick */
+  .circleExpand {
+    transform: scale(75) translate3d(1%, 1%, 0);
+  }
+
+  .row{
+      text-align: end;
+  }
+
+  .sidebarLinks{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction:column;
+      ¸visibility: hidden;
+      pointer-events: none;
+      transition: all 250ms ease-in;
+      opacity:0;
+  }
+
+  .sidebarLinks a{
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      margin: 1.1rem 0;
+      font-size: 1.6rem;
+      font-weight: 500;
+  }
+  .langSelector{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .langSelector .language img{
+      height: 1.5rem;
+      width: 1.5rem;
+      margin:10px;
+  }
+  .langSelectorContainer{
+      margin-top: 1rem;
+      padding-top: 1rem;
+  }
+  
+@media(max-width:800px){
+    .hamburger,
+    .toggleCircle{
+        display:block;
+    }
+    .hambContainer{
+        display: flex;
+    }
+}
