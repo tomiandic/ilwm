@@ -20,10 +20,12 @@ font-family: 'Montserrat', sans-serif; */
 
 html{
   scroll-behavior: smooth;
+    overflow-x:hidden;
 
 }
 body{
   font-family: 'Montserrat', sans-serif;
+  overflow-x:hidden;
 }
 
 .App{

@@ -7,13 +7,16 @@
 }
 
 .landingImage{
-    border-top-right-radius: 10px;
-    min-width: 47vw;
     object-fit: cover;
-    object-position: top right;
-    height: calc(100% - 5rem);
+    height: 100%;
+    width: 100%;
 }
-
+.landingImageHolder{
+    height: calc(100% - 5rem);
+    border-top-right-radius: 80px;
+    overflow:hidden;
+    min-width: 47vw;
+}
 .landingContent{
     align-self: center;
     max-width: 1050px;
@@ -24,15 +27,15 @@
 .landingContent h3{
     font-size: .95rem;
     color: var(--secondary-color);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1.5px;
 }
 
 .landingContent h1{
-    font-family: 'Comfortaa', cursive;
     font-size: 4rem;
     margin: 1rem 0;
     margin-left: -3px;
+    color:var(--dark-bg);
 }
 
 .landingContent p{
@@ -59,13 +62,20 @@
 
 .descParagraph{
     color: #fff;
-    line-height: 2rem;
+    line-height: 2.3rem;
     width: 60%;
     text-align:center;
     margin: auto;
     max-width: 800px;
     min-width: 600px;
     opacity:.9;
+    font-size: .9rem;
+    text-align: left;
+    box-shadow: 10px 0 40px -10px #05060f;
+    border-left: 5px solid var(--secondary-color);
+    padding: 45px;
+    background: #1a1b29;
+    border-top-right-radius: 50px;
 }
 .elipseImage{
     display:block;
@@ -123,19 +133,23 @@
     margin-bottom: 5rem;
 }
 .sectionTitleContainer h2{
-    font-size: 2.5rem;
-    font-family: 'Comfortaa', cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: var(--dark-bg);
+    font-weight: 500;
 }
 .swiperImg{
     height: 100%;
     width: 100%;
     object-fit: cover;
     min-height: 500px;
-    border-radius: 30px;
 }
 .postLink{
     position: relative;
     display: inline-block;
+    border-radius: 30px;
+    overflow:hidden;
+    border: 5px solid white;
 }
 .postContent{
     position: absolute;
@@ -147,25 +161,24 @@
 }
 .postContent h2{
     font-size: 1.25rem;
+    position: relative;
+    display: unset;
+    box-shadow:inset 0 0px 0 var(--main-color);
+    transition: box-shadow 300ms ease-in-out;
+    padding-bottom: 2px;
+    line-height: 1.8rem;
 }
-.postContent h2:before{
-    content: "";
-    position:absolute;
-    bottom:0;
-    left:-10px;
-    height:0;
-    width: 4px;
-    border-radius: 1rem;
-    background: var(--main-color);
-    transition: 250ms all ease-in-out;
-}
+
 .postContent p{
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: .55rem;
-    letter-spacing: 1.5px;
+    font-size:.55rem;
+    font-weight: 600;
+    margin-left: 1px;
     margin-bottom: 10px;
-    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:var(--secondary-color);
+    font-style: italic;
+    margin-right: 10px;
 }
 .postOverlay{
     height: 100%;
@@ -173,12 +186,11 @@
     top:0;
     left:0;
     position: absolute;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 30px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.205)); /* rgba(0, 0, 0, 0.75); */
     transition: background 450ms;
 }
-.postLink:hover .postContent h2:before{
-    height: 100%;
+.postLink:hover h2{
+    box-shadow:inset 0 -3px 0 var(--secondary-color);
 }
 .buttonContainer{
     margin-top: 5rem;
@@ -234,51 +246,85 @@
 
 /* -----------AUTORS SECTION----------- */
 
-.autor{
-    display: flex;
-    margin-bottom: 12rem;
-}
-.autor:last-of-type{
-    margin-bottom:0;
+.autorsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    grid-gap: 80px;
 }
 
-.autor  img{
-    border-top-left-radius:80px;
-    border-bottom-right-radius: 80px;
-    width: 25vw;
-    max-width: 400px;
-    height: 70vh;
-    max-height: 500px;
+.autorDetails > img{
+    border-top-left-radius:40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    width: 100%;
+    height: 400px;
+    max-height: 400px;
     object-fit: cover;
     object-position: top;
+    box-shadow: 0 0 25px 20px #00000036;
+    border:8px solid #f0f8ff0d;
 }
-.autor > p{
-    font-size: .85rem;
-    line-height: 1.8rem;
-    color: #fff;
-    text-align: left;
-    margin-top: -10px;
-    padding-left: 4vw;
-    opacity: .9;
-    max-width: 950px;
+
+.autorDetails{
+    margin-bottom: 5rem;
+    max-width: 330px;
 }
+
 .autorDetails h3{
     color: #fff;
-    letter-spacing: 1px;
-    margin-top: 10px;
+    letter-spacing: .5px;
+    margin: 15px 0;
+    font-size: 1.1rem;
 }
-.autorDetails p{
-    color: var(--main-color);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size:.8rem;
+
+.autorDetails .mailIcon{
+    height: 1.1rem;
+    width: 1.1rem;
+    margin-right: 10px;
+}
+
+.autorContactHolder{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+    opacity: .8;
+}
+.autorInfo{
+    opacity: .75;
+    color: #fff;
+    line-height: 1.4rem;
+    font-size: .85rem;
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 10px;
+}
+.authorRole{
+    color: var(--secondary-color);
+    font-size: .65rem;
     font-weight: 500;
-    margin-top: 5px;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-.decorationLeftAutors{
-    position: absolute;
-    height: 500px;
-    left:-200px;
+.autorContact{
+    font-size: .7rem;
+    color: #fff;
+    display:inline-block;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.autorContactHolder:hover{
+    opacity: 1;
+}
+
+.separator{
+    width: 50px;
+    height: 4px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    margin: 20px 0;
 }
 .decorationRightAutors{
     position: absolute;
@@ -290,7 +336,7 @@
 
 .sectionContact{
     background: var(--main-color);
-    padding: 5rem 0;
+    padding: 10rem 0;
 }
 .contactTitle{
     font-size: 3.5rem;
@@ -300,6 +346,9 @@
     line-height: 4.5rem;
     margin-right: 3rem;
     max-width:450px;
+    flex: 1;
+    min-width: 48%;
+
 }
 .contactContent a{
     color: #000;
@@ -315,6 +364,10 @@
     display: flex;
     align-items: center;
 }
+.contactLinks{
+    flex: 1;
+    max-width: 50%;
+}
 .contactLink img{
     height: 4rem;
     filter: drop-shadow(0 0 -10px black);
@@ -322,9 +375,14 @@
     margin-right: 1rem;
 }
 
+
+/* ----------GALERIJA---------- */
+
+
+
 @media(max-width:1500px){
     .landingContent h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .landingContent{
         max-width: 650px;
@@ -336,9 +394,18 @@
         margin: 0 0;
     }
     .landingContent h3{
-        font-size: .85rem;
-        letter-spacing: 1.5px;
-        font-weight: 500;
+        font-size: .75rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+    .swiperImg{
+        min-height: 400px;
+    }
+    .autorDetails > img{
+        height: 350px;
+    }
+    .sectionTitleContainer h2{
+        font-size: 2rem!important;
     }
 }
 
@@ -363,13 +430,15 @@
     line-height: 1.3rem;
 }
 .landingImage{
-    min-width: 100%;
+    object-position: center;
+}
+.landingImageHolder{
     height: unset;
     max-height: 45vh;
+    min-width: 100%;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     border-top-right-radius: 0px;
-    object-position: center;
 }
 .landing{
     flex-direction: column;
@@ -414,14 +483,9 @@
     padding-left: unset;
 }
 .autorDetails img{
-    height: 200px;
-    width: 200px;
+    height: 300px;
 }
-.autorDetails p{
-    margin-bottom: 2rem;
-    letter-spacing: 1px;
-    font-size: .75rem;
-}
+
 .autor{
     flex-direction:column;
 }
@@ -429,6 +493,19 @@
     font-size: 2.5rem;
 }
 
+.autorsContainer{
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    grid-gap: 50px;
+}
+.autorInfo,
+.authorRole{
+    font-size: .75rem!important;
+    line-height: 1.2rem!important;
+}
+.autorDetails h3{
+    letter-spacing: 0px;
+    font-size: 1rem;
+}
 }
 
 @media(max-width:600px){
@@ -439,7 +516,8 @@
         padding-bottom: 15rem;
     }
     .sectionTitleContainer h2{
-        font-size: 2rem;
+        font-size: 2rem!important;
+        line-height: 4rem!important;
     }
     .sectionTitleContainer{
         align-items: flex-start;
@@ -460,10 +538,11 @@
     }
     .postContent p{
         font-weight: 500;
-        font-size:.6rem;
+        font-size:.5rem;
     }
     .postContent h2{
-        font-size:.9rem;
+        font-size:.8rem;
+        line-height: 1.1rem;
     }
     .postContent{
         bottom: 2rem;
@@ -477,11 +556,21 @@
         min-width: 200px;
         padding: 1rem 1.5rem;
     }
-    .autorDetails img{
-        height: 130px;
-        width: 110px;
+    .autorsContainer{
+        grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+        padding: 20px;
+    }
+    .autorDetails{
+        margin-bottom: 30px;
+        max-width: 100vw;
+    }
+    .autorDetails > img{
+        height: 320px;
+        width: 100%;
         border-top-left-radius: 2rem;
         border-bottom-right-radius: 2rem;
+        border-top-right-radius: 2rem;
+
     }
     .autor{
         margin-bottom: 5rem;
@@ -493,14 +582,36 @@
         margin-right: unset;
         margin-bottom: 3rem;
     }
-    	.contactContent{
-            flex-direction: column;
-        }
+    .contactContent{
+        flex-direction: column;
+    }
+    .decorationRight{
+        height: 200px;
+        top: -100px;
+        right:-100px;
+    }
+    .decorationLeft{
+        left:-200px;
+        height:300px;
+    }
+    .decorationRightAutors{
+        right: -200px;
+        height: 400px;
+        top: 50%;
+    }
+    .contactTitle{
+        width: 90%;
+    }
+    .descParagraph{
+        padding: 40px 20px;
+        font-size:.8rem;
+        border: none;
+        border-radius: 20px;
+    } 
 }
 
 @media(max-width:330px){
     .landing h3{
         display: none;
     }
-    
 }

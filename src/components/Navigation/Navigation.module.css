@@ -19,16 +19,21 @@
     display: flex;
     align-items: center;
 }
-.navLinks a{
-    font-size: .9rem;
-    text-decoration: none;
-    color: #000;
-    font-weight: 500;
-    margin-right: 2.8rem;
-    letter-spacing: .5px;
-    position: relative;
+.active{
+    background: red;
 }
-.navLinks a:before{
+.navLinks a:not(:first-child){
+    font-size: .8rem;
+    text-decoration: none;
+    color: rgb(76, 77, 87);
+    font-weight: 600;
+    margin-right: 2.8rem;
+    letter-spacing: 1.1px;
+    position: relative;
+    text-transform: uppercase;
+    transition: 200ms color ease-in;
+}
+.navLinks a:not(:first-child):before{
     content: "";
     position: absolute;
     bottom: -7px;
@@ -44,8 +49,11 @@
 .navLinks .activeLink:before{
     opacity:.9;
 }
-.navLinks a:not(.activeLink):hover:before{
-    opacity:.2;
+/* .navLinks a:not(.activeLink):hover:before{
+    opacity:.4;
+} */
+.navLinks a:not(:first-child):hover{
+    color: black;
 }
 .navIndicator{
     position: absolute;
@@ -58,15 +66,27 @@
 }
 .navLogo{
     height:2.5rem;
-    margin-right: 4rem;
+    margin-right: 3rem;
     margin-left:-1rem;
-    opacity: .9;
+    opacity: .7;
+    transition: opacity 300ms ease-in;
 }
-
+.navLogo:hover{
+    opacity: 1;
+}
+.navButton{
+    font-weight: 500;
+    font-size: .9rem;
+    cursor:pointer;
+    margin-right: 3rem;
+}
+.navButton:hover{
+    color: var(--secondary-color);
+}
 
 @media(max-width:800px){
 
-.nav > button{
+.navButton{
     display: none;
 }
 

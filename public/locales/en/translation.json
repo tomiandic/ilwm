@@ -9,7 +9,7 @@
         "1": " “Children naturally seek for movement in every situation. It is an unavoidable part of integrated learning enabling them to live and learn by the stimulation of a certain level of physical activity. The approach integrated learning with movement represents a theory arising from practice and providing a new direction in the approach to children’s integrated learning and the general development of the educational process.” Vujičić and Petrić (2020)"
     },
     "landingTitleDesc": {
-        "1": "RESEARCH PROJECT AND AUTHORS MISSION"
+        "1": "PROJECT AND AUTHORS MISSION"
     },
     "landingButton": {
         "1": "Show more"
@@ -31,11 +31,11 @@
         "1": "LATEST POSTS",
         "2": "ABOUT APPLICATION",
         "3": "ANY QUESTION ABOUT OUR PROJECT? ",
-        "4": "AUTHORS AND ASSOCIATES"
+        "4": "AUTHORS & ASSOCIATES"
     },
     "showMoreButton":{
         "1": "Show all posts",
-        "2": "Enter app prototype"
+        "2": "Show app prototype"
 
     },
     "appDesc": {
@@ -44,24 +44,51 @@
     },
     "autors":{
         "1": {
-            "name": "Ph.D. VilkoPetrić",
+            "name": "Ph.D. Vilko Petrić",
             "role": "Author",
-            "about": "He gained his doctor's degree in kinesiology at the Faculty of Kinesiology of the University of Zagreb. He teaches postgraduate doctoral students of Kinesiology at the same faculty, and he is assistant professor at the Faculty of Teacher Education of the University of Rijeka where he teaches subject courses linked to kinesiological education at the university study Early and Preschool Education. During his fifteen-year work experience he worked along the whole vertical of the education system, specialising in the scientific branch Kinesiological Education, i.e. kinesiology in the education system, about which he published a course book, numerous chapters in international scientific books and almost a hundred scientific articles in world-renowned scientific journals. For many years he has been an associate of the Ministry of Science and Education, as well as a regular member of the working group drafting the National curriculum and the curriculum of the subject Physical Education. He is an associate in a few international scientific projects, while since 2019 he has been the head of his own research team in the project Establishment of the system for monitoring children’s physical activity by modern technology in early and preschool institutions financed by the University of Rijeka, reference number uniri-drustv-18-268. Besides scientific projects, his scientific exceptionality has been confirmed by numerous prises and acknowledgments awarded by eminent home and foreign institutions. The ones which could be especially emphasized are the award for the best young scientist in Europe 2015, the „FIEP Europe Thulin Award“ and the „Award of the University of Rijeka Foundation“ for special merits in scientific-research and public activities and the contribution to the promotion of the University of Rijeka and academic community in 2019."
+            "uni" : "Faculty of Teacher Education University of Rijeka",
+            "dep" : "Department of Teaching Methods in the Field of Natural and Social Sciences"
         },
         "2": {
             "name": "Ph.D. Lidija Vujičić",
             "role": "Author",
-            "about": "She is full professor in the scientific area of social sciences, field of pedagogy. She was a kindergarten pedagogue, senior advisor for preschool education, university professor, head of department, vice dean for teaching and students, vice dean for science and international cooperation, currently in her second mandate as the dean of the Faculty of Teacher Education in Rijeka. Her scientific interests include: early and preschool education and the transition toward primary education; new paradigm of children and childhood; the educational institution culture; (co)construction of the curriculum; learning environment; preschool teachers’ initial education; teachers'/preschool teachers' professional development; action research. She took part in a few scientific projects, published numerous scientific papers and participated in many international and domestic conferences. She held numerous professional seminars, workshops and practicums at the county or state level for kindergartens and schools' professional employees. She is the leader of action research directed toward the improvement of practice in a few kindergartens. She is president of the exam committee for the educators' state licence exam in the Primorje-GorskiKotar, Istria and Lika-Senj County. She is a member and head of numerous expert working groups (advisory committee for children's participation of UNICEF Croatia, creation of national standards of occupations, qualifications, licensing, etc.). She is also member of international journals' editorial boards and reviewer, as well as of international organisations EECERA, ATEE, OMEP (World Organization for Early Childhood Education), of the Association for the Development of Higher Education „Universitas“, the Croatian Pedagogic Association and of the Croatian Educational Research Association (branch of the European Educational Research Association – EERA) chairmanship. She is also member of the „Hope for Children“ CRC Policy Center international organisation chairmanship, as well as the founder and head of the Centre for Childhood Research of the Faculty of Teacher Education."
+            "uni" : "Faculty of Teacher Education University of Rijeka",
+            "dep" : "Department of Educational Sciences"
         },
         "3": {
-            "name": "mag.praesc.edu. Mirela Peić",
+            "name": "Mirela Peić mag.praesc.educ.",
             "role": "Author",
-            "about": "She completed the graduate university study Earlyand Preschool Education, and works as a preschool teacher with the qualification of preschool teacher – mentor. She is co-author of the sports programme Through Playing to Sports, verified by the Ministry of Science and Education, and is the author of a number of scientific articles. She continuously collaborates with the scientific community in the domain of children's movement in everyday activities (Faculty of Teacher Education – research, publication of results, contribution to scientific cognitions in correlating theory and practice in early and preschool education; results and examples stated and described in the book by Petrić, V. (2019) Kinesiological Methodology in Early and Preschool Education). She takes part in Summer Schools for Kinesiologists: her professional papers Preschool Children's Competencies and When Individuals become Associates – Through Games and Sports to an Active and Satisfied Individual of the Croatian Society were published and good practice examples presented there. She also takes part in learning communities, gives lectures at the Education and Teacher Training Agency's professional conferences, conducts workshops for preschool teachers, is a visiting lecturer at the Faculty of Teacher Education, takes part in the manifestation Week of Good Educational Practice in Kindergartens of the City of Rijeka at many levels (leadership of the professional conference, moderation, conduction and conception of the end conference programme, as well as contribution to its sole organisation). She is a regular participant of international conferences and public presentations where she presents the educational practice in the sub-centre of Srdoči. She presented her own examples of good practice at the national workshop of the Erasmus+ KA2 project „Modernity, Education and Human Rights“ (2019, Faculty of Teacher Education of Rijeka). She was a member of the Croatian team of preschool teachers in Bordeaux, France (2018) as part of the Erasmus+ project „Artistic Expression and Humanistic Values.“ She is the winner of the AmbasadoRI (Ambassadors) of Education award given by the City of Rijeka."
+            "uni" : "Kindergarten Rijeka, PPO Srdoči"
         },
         "4": {
             "name": "Ph.D. Nikola Tanković",
-            "role": "associate",
-            "about": "He gained his doctor's degree in computing at the Faculty of Electrical Engineering and Computing of the University of Zagreb in 2017. He is currently the vice dean for science and assistant professor at the Faculty of Informatics of the JurajDobrila University of Pula, and holds the following courses: Software engineering, Web applications, Professional practice, Dynamic web applications, Blockchain applications, Creation of information projects, Software Engineering, Software Engineering. Until 2014 he was employed in the company Superiusd.o.o. as a software engineer where he became a technical director in 2015. In 2017 he got employed as an associate at the Faculty of Informatics in Pula, where he became assistant professor in 2020. He published a number of scientific papers on modelling software support and the optimisation of information systems quality. He participates in a number of research and development projects in collaboration with major world corporations, as well as in many scientific projects on data science, artificial intelligence, large data sets processing and distributed system shaping. He is a member of the international professional associations ACM and IEEE."
+            "role": "Associate",
+            "uni" : "Faculty of Informatics University Jurja Dobrile of Pula",
+            "dep" : "Department of Informatics" 
+        },
+        "5": {
+            "name": "Ph.D. Vesna Štemberger",
+            "role": "Associate",
+            "uni" : "Faculty of Education University of Ljubljana",
+            "dep" : "Department of Primary Teacher Education" 
+        },
+        "6": {
+            "name": "Ph.D. Iva Blažević",
+            "role": "Associate",
+            "uni" : "Faculty of Educational Science University Jurja Dobrile of Pula",
+            "dep" : "Department of Primary Teacher Education" 
+        },
+        "7": {
+            "name": "Ph.D. Dario Novak",
+            "role": "Associate",
+            "uni" : "Faculty of Kinesology University of Zagreb",
+            "dep" : "Department of General and Applied Kinesiology" 
+        },
+        "8": {
+            "name": "Ph.D. Lovro Štefan",
+            "role": "Associate",
+            "uni" : "Faculty of Kinesology University of Zagreb",
+            "dep" : "Department of General and Applied Kinesiology" 
         }
     },
     "footerTitle":{

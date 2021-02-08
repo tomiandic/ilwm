@@ -1,8 +1,12 @@
 .titleHolder img{
     width: 100%;
+    height:100%;
     border-radius: 50px;
     object-fit: cover;
+}
+.titleHolder{
     height: 80vh;
+    position: relative;
 }
 .postArticle{
     width: 90%;
@@ -11,21 +15,20 @@
 }
 .postArticle h2{
     text-align:center;
-    color: var(--main-color);
-    font-family: 'comfortaa';
+    color: lightgray;
     font-size: 32px;
     margin-top: 11rem;
+    font-weight: 500;
     letter-spacing: 10px;
 }
 .imgOverlay{
     position: absolute;
-    top:6rem;
-    left: 50%;
-    width: 90%;
+    top:0;
+    left:0;
+    width: 100%;
     border-radius: 50px;
-    transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.45);
-    height: 80vh;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,25 +37,40 @@
     padding: 4rem;
     color: #fff;
 }
-
 .imgOverlay h1{
     font-size: 2.5rem;
 }
-
-.imgOverlay p{
+/* .imgOverlay p{
     color: var(--main-color);
     font-size:.8rem;
     font-weight: 500;
     margin-top: 2rem;
 }
-
+ */
 .articleText{
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
-    margin-top: 5rem;
+    background: #fff;
+    z-index: 10;
+    position: relative;
+    padding: 80px;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 0.1);
+    margin-top: -5rem;
     line-height: 2rem;
+    border-top: 5px solid var(--secondary-color);
 }
-
+.postCat{
+    font-size:.55rem;
+    font-weight: 600;
+    margin-left: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    color:var(--secondary-color);
+    font-style: italic;
+    margin-right: 10px;
+}
 .imgOverlay h2{
     font-size:2rem;
     color: var(--main-color);
@@ -68,4 +86,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@media(max-width:800px){
+
+    .articleText{
+        margin-top: 4rem;
+        padding: 20px;
+        font-size: .9rem;
+        border:none;
+        box-shadow: none;
+    }
+}
+
+@media(max-width:600px){
+    .titleHolder{
+        height: 40vh;
+            }
+    .postArticle{
+        margin-top: 2rem;
+    }
+    .articleText{
+        margin-top:4rem;
+    }
+    .postArticle h2{
+        margin-top: 6rem;
+        line-height:3rem;
+    }
+    .titleHolder h1{
+        font-size: 1.4rem;
+    }
+    .imgOverlay{
+        padding: 1rem;
+    }
+    .articleText{
+        padding: 7px;
+        line-height: 1.8rem;
+    }
 }

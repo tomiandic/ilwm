@@ -1,5 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import {useQuery} from '@apollo/client'
+
 
 import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -7,8 +9,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // have a look at the Quick start guide 
 // for passing in lng and translations on init
 
-const languages = ['hr', 'en']
 
+
+const languages = ['hr', 'en']
 
 i18n
   // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
@@ -32,6 +35,8 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     }
   });
+
+  
 
 
 export default i18n;

@@ -19,10 +19,10 @@
     "react-markdown": "^4.3.1",
     "react-moment": "^1.0.0",
     "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.1.0",
     "react-scripts": "3.4.3",
     "react-share": "^4.3.0",
-    "swiper": "^6.2.0",
-    "use-is-in-viewport": "^1.0.9"
+    "swiper": "^6.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

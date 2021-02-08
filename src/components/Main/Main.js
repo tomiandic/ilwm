@@ -1,45 +1,77 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect} from 'react';
 import Button from '../UI/Button/Button'
-import Gallery from '../Gallery/Gallery'
+import Gallery from '../Gallery/Gallery' 
 import {useTranslation} from 'react-i18next'
-import Posts from '../PostsSection/PostsSection'
-
+import Lightbox from 'fslightbox-react'
+import Posts from '../PostsSection/PostsSection' 
 import classes from './Main.module.css'
+import CONTENT_QUERY from "../Queries/PageContent/pageContentQuery"
+import {useQuery} from '@apollo/client'
+import Query from "../Queries/Query" 
+import AUTHORS_QUERY from '../Queries/Authors/authorsQuery'
+import Loader from '../UI/Loader/Loader'
 
 import landingImg from '../../assets/landing.jpg'
 import arrowImg from '../../assets/arrow.svg'
-
 import elipseImg from '../../assets/elipse.svg'
 import elipseDecImg from '../../assets/elipseDec.svg'
 import laptopImg from '../../assets/laptop.svg'
 import mailImg from '../../assets/mail.svg'
-import autor1 from '../../assets/image1.jpg'
-import autor2 from '../../assets/image2.jpg'
-import autor3 from '../../assets/image3.jpg'
-import autor4 from '../../assets/image1.png'
+import contactMail from '../../assets/cmail.svg'
+import phoneImg from '../../assets/phone.svg'
+import protoVid from '../../assets/vid.mp4'
 import orangeElipse from '../../assets/orangeElipse.svg'
 import orangeElipseFilled from '../../assets/orangeElipseFilled.svg'
-import blueElipse from '../../assets/blueElipse.svg'
+import grad from '../../assets/grad2.jpg';
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+
+ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 
-const Main = (props) => {
+const Main = () => {
 
-
+    const [toggler, setToggler] = useState(false)
     const desc = useRef(null)
-    const executeScroll = () => scrollToRef(desc)
-    const {t, i18n} = useTranslation()
+     const executeScroll = () => scrollToRef(desc) 
+    const {t, i18n} = useTranslation(['translation', 'loaded'])
+    
+     const {data, error, loading} = useQuery(CONTENT_QUERY) 
+
+    if(loading) return <Loader />
+    if(error) console.log(error)
+    else{
+    i18n.addResourceBundle('hr', 'loaded', {
+        mainTitle: data.pageContent.mainTitle_hr,
+        landingContent: data.pageContent.landingText_hr,
+        mainDescription: data.pageContent.mainDescription_hr,
+        appDescription1: data.pageContent.appDescription1_hr,
+        appDescription2: data.pageContent.appDescription2_hr
+      });
+
+    i18n.addResourceBundle('en', 'loaded', {
+        mainTitle: data.pageContent.mainTitle_en,
+        landingContent: data.pageContent.landingText_en,
+        mainDescription: data.pageContent.mainDescription_en,
+        appDescription1: data.pageContent.appDescription1_en,
+        appDescription2: data.pageContent.appDescription2_en
+    });
+    }
+
 
     return(
-    <>
-    <div ref={props.fLandingRef} id="pocetna" className={classes.landing}>
-        <img className={classes.landingImage} src={landingImg} />
+   <>
+
+    <div id="pocetna" className={classes.landing}>
+      
+        <div className={classes.landingImageHolder}>
+            <img className={classes.landingImage} src={landingImg} />
+        </div>
             <div className={classes.landingContent}>
+              
                 <h3>{t('landingTitleDesc.1')}</h3>
-                <h1>{t('landingMainTitle.1')}</h1>
-                <p>{t('landingMainSubtitle.1')}</p>
+                <h1>{t('loaded:mainTitle')}</h1>
+                <p>{t('loaded:landingContent')}</p>
                 <Button onClick={executeScroll} type="main">
                      {t('landingButton.1')}
                      <img className={classes.arrowIcon} src={arrowImg} />
@@ -50,85 +82,73 @@ const Main = (props) => {
         <article>
             <img className={classes.elipseImage} src={elipseImg} />
             <p className={classes.descParagraph}>
-            {t('mainDesc.1')}
+                {t('loaded:mainDescription')}
             </p>
         </article>
-        <img className={classes.decorationRight} src={blueElipse} />
+    
         <img className={classes.decorationLeft} src={orangeElipseFilled} />
 
     </section>
         <Posts></Posts>
-    <section ref={props.fAppRef} id="aplikacija" className={classes.sectionGlobal}>
+    <section style={{overflow:"hidden"}} id="aplikacija" className={classes.sectionGlobal}>
         <div className={classes.sectionContent}>
             <div className={classes.sectionTitleContainer}>
                 <h2 className={classes.sectionTitle}>{t('sectionTitle.2')}</h2>
             </div>
                 <p className={classes.appDesc1}>
-                    {t('appDesc.1')}
+
+                    {t('loaded:appDescription1')}
+                    
                 </p><br/><br/><br/>
                 <p className={classes.appDesc2}>
-                    {t('appDesc.2')}
+
+                    {t('loaded:appDescription2')}
+                    
                 </p>
             <img src={elipseDecImg} className={classes.elipseDec1}/>
 
             <div className={classes.buttonHolder}>
                 <img src={laptopImg} className={classes.laptopImg} />
-                <Button type="secondary-strong">{t('showMoreButton.2')}</Button>
+                <Button onClick={(() => setToggler(!toggler))} type="secondary-strong">{t('showMoreButton.2')}</Button>
             </div>
-
+            <Lightbox toggler={toggler} 
+                 sources={[protoVid]}
+                 sourceIndex={0}
+            ></Lightbox>
         </div>
     </section>
-    <section ref={props.fGalleryRef} id="galerija" className={classes.sectionGlobal}>
+    <section style={{paddingBottom:'7px'}} id="galerija" className={classes.sectionGlobal}>
     <img className={classes.elipseImage} src={elipseImg} />
         
                 <Gallery />
 
      </section>
-     <section ref={props.fAboutRef} id="autori" className={`${classes.sectionGlobal} ${classes.description}`}>
+     <section style={{paddingTop: "11rem"}} id="autori" className={`${classes.sectionGlobal} ${classes.description}`}>
         <img className={classes.decorationRight} src={orangeElipse} />
-        <img className={classes.decorationLeftAutors} src={orangeElipseFilled} />
-        <img className={classes.decorationRightAutors} src={blueElipse} />
-
-
-
             <div className={classes.sectionContent}>
-                <div className={classes.sectionTitleContainer}>
-                    <h2 style={{color:'#fff', lineHeight: '4rem'}} className={classes.sectionTitle}>{t('sectionTitle.4')}</h2>
+            <div className={classes.sectionTitleContainer}>
+                    <h2 style={{color:'#fff', marginBottom: "2rem"}} className={classes.sectionTitle}>{t('sectionTitle.4')}</h2>
                 </div>
                 <div className={classes.autorsContainer}>
-                    <div className={classes.autor}>
-                        <div className={classes.autorDetails}>
-                        <img src={autor1}/>
-                        <h3>{t('autors.1.name')}</h3>
-                        <p>{t('autors.1.role')}</p>
-                        </div>
-                        <p>{t('autors.1.about')}
-                        </p>
-                    </div>
-                    <div className={classes.autor}>
-                        <div className={classes.autorDetails}>
-                        <img src={autor2}/>
-                        <h3>{t('autors.2.name')}</h3>
-                        <p>{t('autors.2.role')}</p>
-                        </div>
-                        <p>{t('autors.2.about')} </p>
-                    </div>
-                    <div className={classes.autor}>
-                        <div className={classes.autorDetails}>
-                        <img src={autor4}/>
-                        <h3>{t('autors.3.name')}</h3>
-                        <p>{t('autors.3.role')}</p>
-                        </div>
-                        <p>{t('autors.3.about')}</p>
-                    </div>
-                    <div className={classes.autor}>
-                        <div className={classes.autorDetails}>
-                        <img src={autor3}/>
-                        <h3>{t('autors.4.name')}</h3>
-                        <p>{t('autors.4.role')}</p>
-                        </div>
-                        <p>{t('autors.4.about')}</p>
-                    </div>
+                <Query query={AUTHORS_QUERY}>
+                {({data: {authors}})=>{
+                
+                    return(authors.map((author)=>{
+                       return(
+                        <div key={author.id} className={classes.autorDetails}>
+                            <img src={author.profilePicture.url}/>
+                            <p className={classes.authorRole}>{author.role}</p>
+                            <h3>{author.fullName}</h3>
+                            <p className={classes.autorInfo}> {author.workPlace}</p>
+                            <div className={classes.autorContactHolder}>
+                                <img className={classes.mailIcon} src={contactMail}/>
+                            <a href={"mailto:"+ author.mailAddress} className={classes.autorContact}>{author.mailAddress}</a>
+                            </div>
+
+                         </div>
+                           )}))
+                      }}
+                  </Query>
                 </div>
             </div>
      </section>
@@ -137,11 +157,12 @@ const Main = (props) => {
                 <h2 className={classes.contactTitle}>{t('sectionTitle.3')}</h2>
                 <div className={classes.contactLinks}>
                     <a className={classes.contactLink} href="mailto:vilko.petric@uniri.hr"><img src={mailImg}/>vilko.petric@uniri.hr</a><br/><br/>
-                    {/* <a target="_blank" className={classes.contactLink} href="https://www.facebook.com/vilko.petric.35"><img src={phoneImg}/>Facebook stranica</a> */}
+                    <a target="_blank" className={classes.contactLink} href="https://www.facebook.com/vilko.petric.35"><img src={phoneImg}/>Facebook stranica</a> 
                 </div>
             </div>
      </section>
     </>
+
 )
                             }
 export default Main

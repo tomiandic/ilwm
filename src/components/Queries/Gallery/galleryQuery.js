@@ -1,16 +1,17 @@
 import gql from 'graphql-tag'
 
 const IMAGES_QUERY = gql`
-query Images{
-    images{
-      Gallery{
-        id
-          url
-      }
-        }
-    }
-`
+                        query Images{
+                           image{
+                             gallery{
+                               id
+                               url
+                             }
+                           }
+                          }
+                        `
 
 export default IMAGES_QUERY
 
-
+ 
+ 

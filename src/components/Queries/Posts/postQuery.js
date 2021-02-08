@@ -6,12 +6,12 @@ const POST_QUERY = gql`
             id
             title
             content
-            created_at
-            category{
+            published_at
+            categories{
                 id
                 name
             }
-            picture{
+            image{
                 url
             }
         }

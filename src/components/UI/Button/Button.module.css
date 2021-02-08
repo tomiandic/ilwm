@@ -13,7 +13,7 @@
 }
 .main{
     background: var(--main-color);
-    box-shadow: 0 0 10px var(--main-color);
+    box-shadow: 0 10px 15px #FFC3005E;
     display: flex;
     align-items: center;
     margin-top: 1.5rem;
@@ -27,9 +27,8 @@
 .secondary,
 .secondary-strong{
     background: transparent;
-    border: 1px solid #000;
     font-size: .75rem;
-    font-weight: 400;
+    font-weight: 500;
     padding: .7rem 1.5rem;
     border-radius: 1rem;
 }
@@ -64,4 +63,12 @@
 .load:hover{
     background-color: var(--secondary-dark);
 
+}
+
+.white{
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1.1rem 2rem;
+    background: transparent;
+    margin-top: 2rem;
 }

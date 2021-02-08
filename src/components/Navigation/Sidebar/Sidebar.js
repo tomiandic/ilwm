@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import classes from './Sidebar.module.css'
 import {useTranslation} from 'react-i18next'
-
+import Button from '../../UI/Button/Button'
+import {HashLink as Link} from 'react-router-hash-link'
 import enIcon from '../../../assets/uk.svg'
 import hrIcon from '../../../assets/cro.svg'
 
@@ -32,19 +33,22 @@ const Sidebar = (props) => {
             <span></span>
         </span>
     </div>
+ 
     <div className={classes.toggleCircle}>
-      <div className={classes.row}>
-        <svg className={`${classes.circle} ${sidebarOpened ? classes.circleExpand : null}`} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="16" cy="16" r="16"/>
-        </svg>
+      <div className={`${classes.row} ${sidebarOpened ? classes.circleExpand : null}`} >
+
+        
       </div>
     </div>
     <div className={classes.sidebarLinks}>
-        <a onClick={sidebarHandle} href="/#pocetna">{t('navLink.1')}</a>
-        <a onClick={sidebarHandle} href="/#novosti">{t('navLink.2')}</a>
-        <a onClick={sidebarHandle} href="/#aplikacija">{t('navLink.3')}</a>
-        <a onClick={sidebarHandle} href="/#galerija">{t('navLink.4')}</a>
-        <a onClick={sidebarHandle} href="/#autori">{t('navLink.5')}</a>
+        <Link to={"/#pocetna"} onClick={sidebarHandle}>{t('navLink.1')}</Link>
+        <Link to={"/#novosti"} onClick={sidebarHandle}>{t('navLink.2')}</Link>
+        <Link to={"/#aplikacija"} onClick={sidebarHandle}>{t('navLink.3')}</Link>
+        <Link to={"/#galerija"} onClick={sidebarHandle}>{t('navLink.4')}</Link>
+        <Link to={"/#autori"} onClick={sidebarHandle}>{t('navLink.5')}</Link>
+        <Button type="white">
+            {t('loginButton.1')}
+        </Button>
         <div className={classes.langSelectorContainer}>
         <div className={classes.langSelector}>
             <div onClick={() => handleClick('hr')} className={classes.language}><img style={i18n.language == 'hr' ? {opacity:1} : {opacity:.5}} src={hrIcon} /></div>
@@ -52,7 +56,6 @@ const Sidebar = (props) => {
         </div>
     </div>
     </div>
-   
     </>
     )
 }

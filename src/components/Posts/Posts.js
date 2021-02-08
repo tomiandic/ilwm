@@ -1,14 +1,14 @@
 import React from 'react';
 import Query from "../Queries/Query"
 import classes from './Posts.module.css'
-import postImg from '../../assets/landing.jpg'
+import postImg from '../../assets/grad.jpg'
 import POSTS_QUERY from '../Queries/Posts/postsQuery'
 import Moment from 'react-moment'
 import {Link} from 'react-router-dom'
 
 function Posts(){
 
-    
+    const scrollOnLoad = () =>window.scrollTo(0, 0) 
    return(
        <section className={classes.postsSection}>
            <div className={classes.postsTitle}>
@@ -18,20 +18,24 @@ function Posts(){
         <div className={classes.postsContainer}>
             <Query query={POSTS_QUERY}>
                 {({data: {posts}})=>{
-                /*     console.log(posts) */
+                
                     return(posts.map((post)=>{
-                       let date = new Date(post.created_at)
+
+                       scrollOnLoad()
                        return(
-                           <Link to={"novosti/" +  post.id}>
-                           <article key={post.id} className={classes.post}>
-                              <img src={post.picture.url} />
+                           <Link key={post.id} to={"novosti/" +  post.id}>
+                           <article  className={classes.post}>
+                              <img src={post.image.url} />
                               <div className={classes.postDetails}>
-                                  <p className={classes.postCat}>{post.category.name}</p>
-                                  <h2>{post.title}</h2>
-                                  <p className={classes.postDate}>
-                                  <Moment format="DD/MM/YYYY">{post.created_at}</Moment>
-                                  </p>
-                                  <p className={classes.postText}>{post.content.substring(0, 444) + "..."}</p>
+                               {/*    <p className={classes.postDate}>
+                                  <Moment format="DD/MM/YYYY">{post.published_at}</Moment>
+                                  </p> */}
+                                  {post.categories.map((category)=>{
+                                      return  <p className={classes.postCat}>{category.name}</p>
+                                })}<br />
+                                  <h2>{post.title}</h2><br />
+                                  
+                                  <p className={classes.postText}>{post.content.substring(0, 244) + "..."}</p>
                               </div>
                            </article>
                             </Link>

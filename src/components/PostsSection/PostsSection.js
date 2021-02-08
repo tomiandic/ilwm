@@ -10,6 +10,7 @@ import leftSlideImg from '../../assets/slideLeft.svg'
 import rightSlideImg from '../../assets/slideRight.svg'
 import {Link} from "react-router-dom"
 import classes from '../Main/Main.module.css'
+import Loader from '../UI/Loader/Loader'
 
 
 
@@ -19,20 +20,19 @@ SwiperCore.use([Navigation]);
 const Posts = (props) => {
     const {t, i18n} = useTranslation()
 
-    const {data, loading} = useQuery(POSTS_QUERY)
+    const {data, error, loading} = useQuery(POSTS_QUERY)
 
-    if(loading) return 'Loading...'
-
+    if(loading) return <Loader />
+    if(error) console.log(error)
     const posts = data.posts.map((post) => (<SwiperSlide key={post.id}>
-        <Link to={"novosti/" +  post.id}>
-        <a className={classes.postLink}>
-            <img className={classes.swiperImg} src={post.picture.url}/>
+        <Link to={"novosti/" +  post.id} className={classes.postLink}>
+            <img className={classes.swiperImg} src={post.image.url}/>
             <div className={classes.postOverlay}></div>
             <div className={classes.postContent}>
-                <p>{post.category.name}</p>
+                <p>{post.categories[0].name}</p>
                 <h2>{post.title}</h2>
             </div>
-        </a>
+        
         </Link>
     </SwiperSlide>))
 

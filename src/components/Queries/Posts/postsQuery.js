@@ -2,16 +2,16 @@ import gql from 'graphql-tag'
 
 const POSTS_QUERY = gql`
     query Posts{
-        posts{
+        posts(sort: "createdAt:DESC"){
             id
             title
             content
-            created_at
-            category{
+            published_at
+            categories{
                 id
                 name
             }
-            picture{
+            image{
                 url
             }
         }
