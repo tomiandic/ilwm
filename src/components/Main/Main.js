@@ -24,7 +24,7 @@ import orangeElipse from '../../assets/orangeElipse.svg'
 import orangeElipseFilled from '../../assets/orangeElipseFilled.svg'
 
 import gsap from 'gsap';
-import { TweenMax, Power3, TimelineLite } from 'gsap';
+import { Power3, TimelineLite } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'; 
 
 
