@@ -35,7 +35,7 @@ function Gallery(){
     }
 
      const thumbs = sources.map((source, index) => 
-        <img className={classes.thumb} src={source} key={index} onClick={() => openLightBox(index)} />
+        <img className={classes.thumb} src={`/api/${source}`} key={index} onClick={() => openLightBox(index)} />
     ) 
 
 
@@ -44,7 +44,7 @@ function Gallery(){
         <div className={classes.galleryContainer}>
             
             <Lightbox toggler={toggler} 
-            sources={sources}
+            sources={sources.map(source=>`/api/${source}`)}
             sourceIndex={index}
             key={sources.length}
             >

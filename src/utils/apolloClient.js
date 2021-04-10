@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: "https://ilwm.herokuapp.com/graphql",
+  uri: "https://www.learnwithmovement.com/api/graphql",
   cache: new InMemoryCache()
 });
 
