@@ -26,10 +26,10 @@ const Posts = (props) => {
     if(error) console.log(error)
     const posts = data.posts.map((post) => (<SwiperSlide key={post.id}>
         <Link to={"novosti/" +  post.id} className={classes.postLink}>
-            <img className={classes.swiperImg} src={post.image.url}/>
+            <img className={classes.swiperImg} src={`/api/${post.image.url}`}/>
             <div className={classes.postOverlay}></div>
             <div className={classes.postContent}>
-                <p>{post.categories[0].name}</p>
+                <p>{post.categories[0]&&post.categories[0].name}</p>
                 <h2>{post.title}</h2>
             </div>
         
@@ -42,10 +42,12 @@ const Posts = (props) => {
         <div className={classes.sectionContent}>
             <div className={classes.sectionTitleContainer}>
                 <h2 className={classes.sectionTitle}>{t('sectionTitle.1')}</h2>
+                {data.posts.length>3&&
                 <div className={classes.sliderNav}>
-                    <img id='swipeLeft' className={classes.leftArrow} src={leftSlideImg}/>
-                    <img id='swipeRight' className={classes.rightArrow} src={rightSlideImg}/>
+                        <img id='swipeLeft' className={classes.leftArrow} src={leftSlideImg}/>
+                        <img id='swipeRight' className={classes.rightArrow} src={rightSlideImg}/>
                 </div>
+                    }
             </div>
             <Swiper
             spaceBetween={15}
@@ -64,18 +66,13 @@ const Posts = (props) => {
             navigation={{prevEl: '#swipeLeft', nextEl: '#swipeRight'}}
             >
            {posts}
-
-                   {/*  <SwiperSlide><a href="https://swiperjs.com/react/#swiper-props" className={classes.postLink}><img className={classes.swiperImg} src={postImg}/><div className={classes.postOverlay}></div><div className={classes.postContent}><p>Projekti</p><h2>Lorem ipsum dolor Lorem ipsum dolor</h2></div></a></SwiperSlide>
-                    <SwiperSlide><a href="https://swiperjs.com/react/#swiper-props" className={classes.postLink}><img className={classes.swiperImg} src={postImg}/><div className={classes.postOverlay}></div><div className={classes.postContent}><p>Projekti</p><h2>Lorem ipsum dolor Lorem ipsum dolor</h2></div></a></SwiperSlide>
-                    <SwiperSlide><a href="https://swiperjs.com/react/#swiper-props" className={classes.postLink}><img className={classes.swiperImg} src={postImg}/><div className={classes.postOverlay}></div><div className={classes.postContent}><p>Projekti</p><h2>Lorem ipsum dolor Lorem ipsum dolor</h2></div></a></SwiperSlide>
-                    <SwiperSlide><a href="https://swiperjs.com/react/#swiper-props" className={classes.postLink}><img className={classes.swiperImg} src={postImg}/><div className={classes.postOverlay}></div><div className={classes.postContent}><p>Projekti</p><h2>Lorem ipsum dolor Lorem ipsum dolor</h2></div></a></SwiperSlide>
-                    <SwiperSlide><a href="https://swiperjs.com/react/#swiper-props" className={classes.postLink}><img className={classes.swiperImg} src={postImg}/><div className={classes.postOverlay}></div><div className={classes.postContent}><p>Projekti</p><h2>Lorem ipsum dolor Lorem ipsum dolor</h2></div></a></SwiperSlide>
-                  */}
             </Swiper>
+            
             <div className={classes.buttonContainer}>
+                {data.posts.length>6&&
                   <Link to="/novosti">
                      <Button type="secondary-strong">{t('showMoreButton.1')}</Button>
-                  </Link>
+                  </Link>}
             </div>
         </div>
     </section>

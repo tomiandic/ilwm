@@ -187,12 +187,12 @@ const Main = () => {
                     return(authors.map((author)=>{
                        return(
                         <div key={author.id} className={classes.autorDetails}>
-                            <img src={author.profilePicture.url}/>
+                            <img src={`/api/${author.profilePicture.url}`}/>
                             <p className={classes.authorRole}>{author.role}</p>
                             <h3>{author.fullName}</h3>
                             <p className={classes.autorInfo}> {author.workPlace}</p>
                             <div className={classes.autorContactHolder}>
-                                <img className={classes.mailIcon} src={contactMail}/>
+                            <img className={classes.mailIcon} src={contactMail}/>
                             <a href={"mailto:"+ author.mailAddress} className={classes.autorContact}>{author.mailAddress}</a>
                             </div>
                          </div>

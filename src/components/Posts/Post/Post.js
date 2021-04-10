@@ -21,7 +21,7 @@ const Post = () =>{
     
     <article className={classes.postArticle}>
         <div className={classes.titleHolder}>
-            <img src={post.image.url}/>
+            <img src={`/api/${post.image.url}`}/>
             <div className={classes.imgOverlay}>
             <div>
             {post.categories.map((category)=>{
@@ -39,11 +39,11 @@ const Post = () =>{
         <h2>PODIJELITE ČLANAK!</h2>
         <div className={classes.shareContainer}>
             {/* TODO: postavi content, subject etc za share */}
-            <EmailShareButton url={window.location.href} ><EmailIcon/></EmailShareButton>
-            <FacebookShareButton url={window.location.href} ><FacebookIcon/></FacebookShareButton>
-            <LinkedinShareButton url={window.location.href} ><LinkedinIcon/></LinkedinShareButton>
-            <TwitterShareButton url={window.location.href} ><TwitterIcon /></TwitterShareButton>
-            <ViberShareButton url={window.location.href} ><ViberIcon /></ViberShareButton>
+            <EmailShareButton title={post.title} url={window.location.href} ><EmailIcon/></EmailShareButton>
+            <FacebookShareButton title={post.title} url={window.location.href} ><FacebookIcon/></FacebookShareButton>
+            <LinkedinShareButton title={post.title} url={window.location.href} ><LinkedinIcon/></LinkedinShareButton>
+            <TwitterShareButton title={post.title} url={window.location.href} ><TwitterIcon /></TwitterShareButton>
+            <ViberShareButton title={post.title} url={window.location.href} ><ViberIcon /></ViberShareButton>
 
         </div>
    </article>
